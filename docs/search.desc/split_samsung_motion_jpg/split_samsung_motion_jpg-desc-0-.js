@@ -1,0 +1,1 @@
+searchState.loadedDescShard("split_samsung_motion_jpg", 0, "split_samsung_motion_jpg\nSplits video and picture\nCreates videos and files")

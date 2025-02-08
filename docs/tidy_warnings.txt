@@ -1,0 +1,114 @@
+./docs/split_samsung_motion_jpg/fn.main.html
+Document: "2" is not a file!
+
+line 1 column 2228 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2228 - Warning: discarding unexpected <rustdoc-search>
+line 1 column 2244 - Warning: discarding unexpected </rustdoc-search>
+line 1 column 2548 - Error: <rustdoc-toolbar> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2548 - Warning: discarding unexpected <rustdoc-toolbar>
+line 1 column 2565 - Warning: discarding unexpected </rustdoc-toolbar>
+line 1 column 1829 - Warning: trimming empty <button>
+This document has errors that must be fixed before
+using HTML Tidy to generate a tidied up version.
+
+./docs/split_samsung_motion_jpg/all.html
+Document: "2" is not a file!
+
+line 1 column 2359 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2359 - Warning: discarding unexpected <rustdoc-search>
+line 1 column 2375 - Warning: discarding unexpected </rustdoc-search>
+line 1 column 1734 - Warning: trimming empty <button>
+This document has errors that must be fixed before
+using HTML Tidy to generate a tidied up version.
+
+./docs/split_samsung_motion_jpg/fn.splitter.html
+Document: "2" is not a file!
+
+line 1 column 2179 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2179 - Warning: discarding unexpected <rustdoc-search>
+line 1 column 2195 - Warning: discarding unexpected </rustdoc-search>
+line 1 column 2503 - Error: <rustdoc-toolbar> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2503 - Warning: discarding unexpected <rustdoc-toolbar>
+line 1 column 2520 - Warning: discarding unexpected </rustdoc-toolbar>
+line 1 column 1780 - Warning: trimming empty <button>
+This document has errors that must be fixed before
+using HTML Tidy to generate a tidied up version.
+
+./docs/split_samsung_motion_jpg/fn.write_files.html
+Document: "2" is not a file!
+
+line 1 column 2182 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2182 - Warning: discarding unexpected <rustdoc-search>
+line 1 column 2198 - Warning: discarding unexpected </rustdoc-search>
+line 1 column 2509 - Error: <rustdoc-toolbar> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2509 - Warning: discarding unexpected <rustdoc-toolbar>
+line 1 column 2526 - Warning: discarding unexpected </rustdoc-toolbar>
+line 1 column 1783 - Warning: trimming empty <button>
+This document has errors that must be fixed before
+using HTML Tidy to generate a tidied up version.
+
+./docs/split_samsung_motion_jpg/index.html
+Document: "2" is not a file!
+
+line 1 column 2924 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2924 - Warning: discarding unexpected <rustdoc-search>
+line 1 column 2940 - Warning: discarding unexpected </rustdoc-search>
+line 1 column 3160 - Error: <rustdoc-toolbar> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 3160 - Warning: discarding unexpected <rustdoc-toolbar>
+line 1 column 3177 - Warning: discarding unexpected </rustdoc-toolbar>
+line 1 column 1771 - Warning: trimming empty <button>
+This document has errors that must be fixed before
+using HTML Tidy to generate a tidied up version.
+
+./docs/split_samsung_motion_jpg/constant.EOP.html
+Document: "2" is not a file!
+
+line 1 column 2238 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2238 - Warning: discarding unexpected <rustdoc-search>
+line 1 column 2254 - Warning: discarding unexpected </rustdoc-search>
+line 1 column 2563 - Error: <rustdoc-toolbar> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2563 - Warning: discarding unexpected <rustdoc-toolbar>
+line 1 column 2580 - Warning: discarding unexpected </rustdoc-toolbar>
+line 1 column 1839 - Warning: trimming empty <button>
+This document has errors that must be fixed before
+using HTML Tidy to generate a tidied up version.
+
+./docs/help.html
+Document: "2" is not a file!
+
+line 1 column 2333 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2333 - Warning: discarding unexpected <rustdoc-search>
+line 1 column 2349 - Warning: discarding unexpected </rustdoc-search>
+line 1 column 1691 - Warning: trimming empty <button>
+This document has errors that must be fixed before
+using HTML Tidy to generate a tidied up version.
+
+./docs/settings.html
+Document: "2" is not a file!
+
+line 1 column 2335 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2335 - Warning: discarding unexpected <rustdoc-search>
+line 1 column 2351 - Warning: discarding unexpected </rustdoc-search>
+line 1 column 1689 - Warning: trimming empty <button>
+This document has errors that must be fixed before
+using HTML Tidy to generate a tidied up version.
+
+./docs/src/split_samsung_motion_jpg/main.rs.html
+Document: "2" is not a file!
+
+line 1 column 1963 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 1963 - Warning: discarding unexpected <rustdoc-search>
+line 1 column 1979 - Warning: discarding unexpected </rustdoc-search>
+line 1 column 2069 - Warning: <div> isn't allowed in <h1> elements
+line 1 column 2119 - Warning: discarding unexpected </div>
+line 1 column 2137 - Error: <rustdoc-toolbar> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2137 - Warning: discarding unexpected <rustdoc-toolbar>
+line 1 column 2154 - Warning: discarding unexpected </rustdoc-toolbar>
+This document has errors that must be fixed before
+using HTML Tidy to generate a tidied up version.
+
+./docs/index.html
+Document: "2" is not a file!
+
+line 1 column 1 - Warning: missing <!DOCTYPE> declaration
+line 1 column 1 - Warning: inserting missing 'title' element
