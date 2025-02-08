@@ -1,1 +1,1 @@
-searchState.loadedDescShard("split_samsung_motion_jpg", 0, "split_samsung_motion_jpg\nSplits video and picture\nCreates videos and files")
+searchState.loadedDescShard("split_samsung_motion_jpg", 0, "split_samsung_motion_jpg\nANSI color\nANSI color\ncheck the file if it is a motion jpg\nSplits video and picture\nCreates videos and files")

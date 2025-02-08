@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"constant":["EOP"],"fn":["main","splitter","write_files"]};
+window.SIDEBAR_ITEMS = {"constant":["EOP","RED","RESET"],"fn":["check_if_motion_jpg","main","splitter","write_files"]};
