@@ -1,0 +1,71 @@
+{
+    "workbench.colorCustomizations": {
+        "titleBar.activeForeground": "#fff",
+        "titleBar.inactiveForeground": "#ffffffcc",
+        "titleBar.activeBackground": "#477587",
+        "titleBar.inactiveBackground": "#3F758DCC"
+      },
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "files.associations": {
+        "LICENSE": "plain text"
+    },
+    "rust-analyzer.showUnlinkedFileNotification": false,
+    "cSpell.words": [
+        "Alla",
+        "appender",
+        "bestia",
+        "bestiadev",
+        "bypassrls",
+        "camino",
+        "conname",
+        "contype",
+        "createcluster",
+        "createdb",
+        "createrole",
+        "CRUSTDE",
+        "ctlcluster",
+        "dbclient",
+        "dbname",
+        "endregion",
+        "liporuwcha",
+        "lsclusters",
+        "MSYS",
+        "Nazdravlje",
+        "nextval",
+        "PATHCONV",
+        "pkey",
+        "plantuml",
+        "plpgsql",
+        "proname",
+        "Prost",
+        "psql",
+        "regprocedure",
+        "reqwest",
+        "rustdevuser",
+        "rustlang",
+        "rustprojects",
+        "serde",
+        "sqltools",
+        "sshadd",
+        "struct",
+        "subsecond",
+        "substack",
+        "Tauri",
+        "thiserror",
+        "usecreatedb",
+        "usename",
+        "usesuper",
+        "varchar",
+        "Weijan",
+        "zcvf",
+        "zdravje",
+        "zellij"
+    ]
+}
