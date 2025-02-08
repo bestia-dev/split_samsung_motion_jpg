@@ -114,6 +114,8 @@ fn match_arguments_and_call_tasks(mut args: std::env::Args) {
                     task_build();
                 } else if &task == "release" {
                     task_release();
+                } else if &task == "win_release" {
+                    task_win_release();
                 } else if &task == "doc" {
                     task_doc();
                 } else if &task == "test" {
@@ -142,6 +144,7 @@ fn print_help() {
     {YELLOW}User defined tasks in automation_tasks_rs:{RESET}
 {GREEN}cargo auto build{RESET} - {YELLOW}builds the crate in debug mode, fmt, increment version{RESET}
 {GREEN}cargo auto release{RESET} - {YELLOW}builds the crate in release mode, fmt, increment version{RESET}
+{GREEN}cargo auto win_release{RESET} - {YELLOW}builds the crate for windows release mode, fmt, increment version{RESET}
 {GREEN}cargo auto doc{RESET} - {YELLOW}builds the docs, copy to docs directory{RESET}
 {GREEN}cargo auto test{RESET} - {YELLOW}runs all the tests{RESET}
 {GREEN}cargo auto commit_and_push "message"{RESET} - {YELLOW}commits with message and push with mandatory message{RESET}
@@ -180,7 +183,7 @@ fn completion() {
     let last_word = args[3].as_str();
 
     if last_word == "cargo-auto" || last_word == "auto" {
-        let sub_commands = vec!["build", "release", "doc", "test", "commit_and_push", "github_new_release"];
+        let sub_commands = vec!["build", "release", "win_release", "doc", "test", "commit_and_push", "github_new_release"];
         cl::completion_return_one_or_more_sub_commands(sub_commands, word_being_completed);
     }
     /*
@@ -232,6 +235,37 @@ fn task_release() {
         r#"
     {YELLOW}After `cargo auto release`, run the compiled binary, examples and/or tests{RESET}
 {GREEN}./target/release/{package_name}{RESET}
+    {YELLOW}if ok then{RESET}
+{GREEN}cargo auto win_release{RESET}
+"#,
+        package_name = cargo_toml.package_name(),
+    );
+    print_examples_cmd();
+}
+
+/// cargo build --release
+fn task_win_release() {
+    let cargo_toml = cl::CargoToml::read();
+    cl::auto_version_increment_semver_or_date();
+    cl::auto_cargo_toml_to_md();
+    cl::auto_lines_of_code("");
+
+    cl::run_shell_command_static("cargo fmt").unwrap_or_else(|e| panic!("{e}"));
+    cl::run_shell_command_static("cargo build --release --target x86_64-pc-windows-gnu").unwrap_or_else(|e| panic!("{e}"));
+
+    // cl::ShellCommandLimitedDoubleQuotesSanitizer::new(r#"strip "target/release/{package_name}" "#).unwrap_or_else(|e| panic!("{e}"))
+    // .arg("{package_name}", &cargo_toml.package_name()).unwrap_or_else(|e| panic!("{e}"))
+    // .run().unwrap_or_else(|e| panic!("{e}"));
+
+    println!(
+        r#"
+    {YELLOW}After `cargo auto win_release`, run the compiled binary, examples and/or tests{RESET}
+    {YELLOW}In Windows git-bash, copy the exe file from the Crustde container to Windows.{RESET}
+{GREEN}scp rustdevuser@crustde:/home/rustdevuser/rustprojects/{package_name}/target/x86_64-pc-windows-gnu/release/{package_name}.exe /c/Users/Luciano/rustprojects/{package_name}/{RESET}
+    {YELLOW}Run the exe in Windows git-bash.{RESET}
+{GREEN}cd ~/rustprojects/{package_name}
+./{package_name}.exe{RESET}
+
     {YELLOW}if ok then{RESET}
 {GREEN}cargo auto doc{RESET}
 "#,
@@ -385,16 +419,50 @@ fn task_github_new_release() {
         {YELLOW}Now uploading release asset. This can take some time if the files are big. Wait...{RESET}
     "
     );
-    // compress files tar.gz
-    let tar_name = format!("{repo_name}-{tag_name_version}-x86_64-unknown-linux-gnu.tar.gz");
 
-    cl::ShellCommandLimitedDoubleQuotesSanitizer::new(
-        r#"tar -zcvf "{tar_name_sanitized_for_double_quote}" "target/release/{repo_name_sanitized_for_double_quote}" "#).unwrap_or_else(|e| panic!("{e}"))
-    .arg("{tar_name_sanitized_for_double_quote}", &tar_name).unwrap_or_else(|e| panic!("{e}"))
-    .arg("{repo_name_sanitized_for_double_quote}", &repo_name).unwrap_or_else(|e| panic!("{e}"))
-    .run().unwrap_or_else(|e| panic!("{e}"));
+    // upload asset upload asset linux only for executables, not for libraries
+    if std::fs::exists(format!("target/release/{repo_name}")).unwrap(){
+        // compress files tar.gz
+        let tar_name = format!("{repo_name}-{tag_name_version}-x86_64-unknown-linux-gnu.tar.gz");
 
-    // upload asset
+        cl::ShellCommandLimitedDoubleQuotesSanitizer::new(
+            r#"tar -zcvf "{tar_name_sanitized_for_double_quote}" "target/release/{repo_name_sanitized_for_double_quote}" "#).unwrap_or_else(|e| panic!("{e}"))
+        .arg("{tar_name_sanitized_for_double_quote}", &tar_name).unwrap_or_else(|e| panic!("{e}"))
+        .arg("{repo_name_sanitized_for_double_quote}", &repo_name).unwrap_or_else(|e| panic!("{e}"))
+        .run().unwrap_or_else(|e| panic!("{e}"));
+
+        cgl::github_api_upload_asset_to_release(&github_client, &github_owner, &repo_name, &release_id, &tar_name);
+
+        cl::ShellCommandLimitedDoubleQuotesSanitizer::new(
+            r#"rm "{tar_name_sanitized_for_double_quote}" "#).unwrap_or_else(|e| panic!("{e}"))
+        .arg("{tar_name_sanitized_for_double_quote}", &tar_name).unwrap_or_else(|e| panic!("{e}"))
+        .run().unwrap_or_else(|e| panic!("{e}"));
+    
+    println!(
+        r#"
+    {YELLOW}Asset for Linux uploaded. Open and edit the description on GitHub Releases in the browser.{RESET}
+    "#
+    );
+    }
+    // endregion: upload asset linux only for executables, not for libraries
+
+    // upload asset upload asset win only for executables, not for libraries
+
+ if std::fs::exists(format!("target/x86_64-pc-windows-gnu/release/{repo_name}.exe")).unwrap(){
+            // Install zip into the container from the parent WSL:
+    // podman exec --user=root crustde_vscode_cnt   apt-get install -y zip
+    // compress file with zip because it is Windows
+    let tar_name = format!("{repo_name}-{tag_name_version}-x86_64-pc-windows-gnu.zip");
+
+    cl::ShellCommandLimitedDoubleQuotesSanitizer::new(r#"zip "{tar_name_sanitized_for_double_quote}" "target/x86_64-pc-windows-gnu/release/{repo_name_sanitized_for_double_quote}.exe" "#)
+        .unwrap_or_else(|e| panic!("{e}"))
+        .arg("{tar_name_sanitized_for_double_quote}", &tar_name)
+        .unwrap_or_else(|e| panic!("{e}"))
+        .arg("{repo_name_sanitized_for_double_quote}", &repo_name)
+        .unwrap_or_else(|e| panic!("{e}"))
+        .run()
+        .unwrap_or_else(|e| panic!("{e}"));
+
     cgl::github_api_upload_asset_to_release(&github_client, &github_owner, &repo_name, &release_id, &tar_name);
 
     cl::ShellCommandLimitedDoubleQuotesSanitizer::new(
@@ -404,11 +472,11 @@ fn task_github_new_release() {
 
     println!(
         r#"
-    {YELLOW}Asset uploaded. Open and edit the description on GitHub Releases in the browser.{RESET}
+    {YELLOW}Asset for Win uploaded. Open and edit the description on GitHub Releases in the browser.{RESET}
     "#
     );
-
-    // endregion: upload asset only for executables, not for libraries
+ }
+    // endregion: upload asset win only for executables, not for libraries
 
     println!(
         r#"

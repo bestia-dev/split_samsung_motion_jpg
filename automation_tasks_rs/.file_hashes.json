@@ -6,7 +6,7 @@
     },
     {
       "filename": "automation_tasks_rs/target/debug/automation_tasks_rs",
-      "filehash": "868d6c6891dca24cd501d6712673172a8c2cd50182f03f9f9d0c27c61ec33e59"
+      "filehash": "9a6f923bf4272578722315627361f95f2c5f8e1cc7974258ed4c17377213c8b0"
     },
     {
       "filename": "automation_tasks_rs/src/secrets_always_local_mod.rs",
@@ -14,7 +14,7 @@
     },
     {
       "filename": "automation_tasks_rs/src/main.rs",
-      "filehash": "8c9563d5ecba955a8f327b769dd1c33eaec014ea89aaa31c4502a618c20a3186"
+      "filehash": "11cd74e4fa9d2700c05d44b20bdd374b43fbeff1b0851ba602051f3b4562a6dc"
     }
   ]
 }
