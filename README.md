@@ -4,8 +4,8 @@
 
 [//]: # (auto_cargo_toml_to_md start)
 
-**Split Samsung 3 seconds motion jpg into still photo and video(2025-02)**  
-***version: 1.0.7 date: 2025-02-08 author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/split_samsung_motion_jpg)***
+**Split 'Samsung 3 seconds motion jpg' into still photo and video (2025-02)**  
+***version: 1.0.8 date: 2025-02-08 author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/split_samsung_motion_jpg)***
 
  ![work-in-progress](https://img.shields.io/badge/work_in_progress-yellow)
  ![maintained](https://img.shields.io/badge/maintained-green)
@@ -16,11 +16,11 @@
 [//]: # (auto_cargo_toml_to_md end)
 
 [//]: # (auto_lines_of_code start)
-[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-46-green.svg)]()
-[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-2-blue.svg)]()
-[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-10-purple.svg)]()
-[![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)]()
-[![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)]()
+[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-46-green.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
+[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-2-blue.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
+[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-10-purple.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
+[![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
+[![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
 
 [//]: # (auto_lines_of_code end)
 
@@ -33,16 +33,15 @@ My projects on GitHub are more like a tutorial than a finished product: [bestia-
 
 ## Motivation
 
-My Samsung S23 phone can take `motion photos`. It is a combination of a jpg photo with attached a short 3 seconds video. Most computers cannot play this strange format yet.
+My Samsung S23 phone can take `motion photos`. It is a combination of a `jpg` photo with attached a short 3 seconds video `mp4`. Most computers cannot play this strange format yet.
 
-I want to split these files into a normal jpg and a normal mpf file.
+I want to split these files into a normal `jpg` and a normal `mp4` file.
 
 # Original code
 
 The original script is in python from <https://github.com/chlete/samsung-motion-photo-splitter>.
 
 ```original
-
 Samsung's S7 Motion Photo splitter.
 S7 generates a container which encapsulates picture and video. The first part
 is a JPEG with its usual footer plus Samsung's own (MotionPhoto_Data). Second
@@ -54,7 +53,7 @@ JPEG: byte zero to samsung footer end
 MP4: JPEG's footer + 1 to end of file (size of the file)
 ```
 
-I just translated it to Rust. I even used an AI translator to help with the initial translation. But it didn't work in the first try. I needed to correct it a bit.
+I just translated it to Rust. I even used an AI translator to help with the initial translation. But it didn't work on first try. I needed to correct it a bit.
 
 ## Open-source and free as a beer
 
