@@ -10,6 +10,8 @@ The TODO section is part of the [README.md](https://github.com/bestia-dev/split_
 
 ## Unreleased
 
+## Version 1.0.30 (2025-02-09)
+
 - progress bar
 
 ## Version 1.0.25 (2025-02-09)
