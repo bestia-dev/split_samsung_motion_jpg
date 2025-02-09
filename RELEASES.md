@@ -10,11 +10,9 @@ The TODO section is part of the [README.md](https://github.com/bestia-dev/split_
 
 ## Unreleased
 
-- build for windows
+## Version 1.0.25 (2025-02-09)
 
 - build for windows
-
-## Version 1.0.14 (2025-02-08)
 
 ## Version 1.0.14 (2025-02-08)
 
@@ -25,4 +23,3 @@ The TODO section is part of the [README.md](https://github.com/bestia-dev/split_
 - doc
 
 ## Version 0.0.1
-
