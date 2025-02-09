@@ -1,6 +1,6 @@
 [package]
 name = "split_samsung_motion_jpg"
-version = "1.0.25"
+version = "1.0.30"
 description = "Split 'Samsung 3 seconds motion jpg' into still photo and video (2025-02)"
 authors = ["bestia.dev"]
 homepage = "https://bestia.dev"

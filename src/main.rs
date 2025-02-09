@@ -74,23 +74,30 @@ fn main_inner() {
             eprintln!("{RED}Error: file {} has no samsung motion photo. {RESET}", glob_input);
         }
     } else {
+        debug!("Glob wildcard pattern");
         let mut count_all_files = 0;
         let mut count_motion_files = 0;
         for (i, entry) in glob::glob(&glob_input).expect(&format!("{RED}Failed to read glob pattern {RESET}")).enumerate() {
-            debug!("glob wildcard pattern");
             match entry {
                 Ok(path) => {
                     // don't print error for every file that is not motion jpg,
                     // but only print the files that are splitted
                     if splitter(&path.to_string_lossy()).is_some() {
                         count_motion_files += 1;
-                        println!("{count_motion_files} - {}", path.to_string_lossy());
+                        println!("\n{count_motion_files} - {}", path.to_string_lossy());
                     }
                 }
-                Err(e) => eprintln!("{RED}Error: {:?} {RESET}", e),
+                Err(e) => eprintln!("\n{RED}Error: {:?} {RESET}", e),
             }
             count_all_files = i + 1;
+            // progress bar
+            if count_all_files % 10 == 0 {
+                print!(".");
+                use std::io::Write;
+                std::io::stdout().flush().unwrap();
+            }
         }
+        println!("\n");
         println!("Splitted files: {count_motion_files}");
         println!("All files: {count_all_files}");
     }
@@ -118,7 +125,6 @@ fn splitter(file_name: &str) -> Option<()> {
 
 /// check the file if it is a motion jpg
 fn check_if_motion_jpg(file_name: &str) -> Option<(Vec<u8>, usize)> {
-    debug!("filename: {file_name}");
     let mut file = std::fs::File::open(file_name).expect(&format!("{RED}Failed to open file {RESET}"));
     let mut buffer = Vec::new();
     // import trait
