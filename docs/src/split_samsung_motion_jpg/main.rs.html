@@ -149,7 +149,13 @@
 <a href="#148" id="148">148</a>
 <a href="#149" id="149">149</a>
 <a href="#150" id="150">150</a>
-<a href="#151" id="151">151</a></pre></div><pre class="rust"><code><span class="comment">// split_samsung_motion_jpg/src/main.rs
+<a href="#151" id="151">151</a>
+<a href="#152" id="152">152</a>
+<a href="#153" id="153">153</a>
+<a href="#154" id="154">154</a>
+<a href="#155" id="155">155</a>
+<a href="#156" id="156">156</a>
+<a href="#157" id="157">157</a></pre></div><pre class="rust"><code><span class="comment">// split_samsung_motion_jpg/src/main.rs
 
 </span><span class="attr">#![doc=<span class="macro">include_str!</span>(<span class="string">"../README.md"</span>)]
 
@@ -225,23 +231,30 @@
             <span class="macro">eprintln!</span>(<span class="string">"{RED}Error: file {} has no samsung motion photo. {RESET}"</span>, glob_input);
         }
     } <span class="kw">else </span>{
+        <span class="macro">debug!</span>(<span class="string">"Glob wildcard pattern"</span>);
         <span class="kw">let </span><span class="kw-2">mut </span>count_all_files = <span class="number">0</span>;
         <span class="kw">let </span><span class="kw-2">mut </span>count_motion_files = <span class="number">0</span>;
         <span class="kw">for </span>(i, entry) <span class="kw">in </span>glob::glob(<span class="kw-2">&amp;</span>glob_input).expect(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">"{RED}Failed to read glob pattern {RESET}"</span>)).enumerate() {
-            <span class="macro">debug!</span>(<span class="string">"glob wildcard pattern"</span>);
             <span class="kw">match </span>entry {
                 <span class="prelude-val">Ok</span>(path) =&gt; {
                     <span class="comment">// don't print error for every file that is not motion jpg,
                     // but only print the files that are splitted
                     </span><span class="kw">if </span>splitter(<span class="kw-2">&amp;</span>path.to_string_lossy()).is_some() {
                         count_motion_files += <span class="number">1</span>;
-                        <span class="macro">println!</span>(<span class="string">"{count_motion_files} - {}"</span>, path.to_string_lossy());
+                        <span class="macro">println!</span>(<span class="string">"\n{count_motion_files} - {}"</span>, path.to_string_lossy());
                     }
                 }
-                <span class="prelude-val">Err</span>(e) =&gt; <span class="macro">eprintln!</span>(<span class="string">"{RED}Error: {:?} {RESET}"</span>, e),
+                <span class="prelude-val">Err</span>(e) =&gt; <span class="macro">eprintln!</span>(<span class="string">"\n{RED}Error: {:?} {RESET}"</span>, e),
             }
             count_all_files = i + <span class="number">1</span>;
+            <span class="comment">// progress bar
+            </span><span class="kw">if </span>count_all_files % <span class="number">10 </span>== <span class="number">0 </span>{
+                <span class="macro">print!</span>(<span class="string">"."</span>);
+                <span class="kw">use </span>std::io::Write;
+                std::io::stdout().flush().unwrap();
+            }
         }
+        <span class="macro">println!</span>(<span class="string">"\n"</span>);
         <span class="macro">println!</span>(<span class="string">"Splitted files: {count_motion_files}"</span>);
         <span class="macro">println!</span>(<span class="string">"All files: {count_all_files}"</span>);
     }
@@ -269,7 +282,6 @@
 
 <span class="doccomment">/// check the file if it is a motion jpg
 </span><span class="kw">fn </span>check_if_motion_jpg(file_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;(Vec&lt;u8&gt;, usize)&gt; {
-    <span class="macro">debug!</span>(<span class="string">"filename: {file_name}"</span>);
     <span class="kw">let </span><span class="kw-2">mut </span>file = std::fs::File::open(file_name).expect(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">"{RED}Failed to open file {RESET}"</span>));
     <span class="kw">let </span><span class="kw-2">mut </span>buffer = Vec::new();
     <span class="comment">// import trait
