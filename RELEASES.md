@@ -12,6 +12,8 @@ The TODO section is part of the [README.md](https://github.com/bestia-dev/split_
 
 - build for windows
 
+- build for windows
+
 ## Version 1.0.14 (2025-02-08)
 
 ## Version 1.0.14 (2025-02-08)
