@@ -2,11 +2,11 @@
   "vec_file_metadata": [
     {
       "filename": "Cargo.toml",
-      "filehash": "3aa9dee88068fe4a2289e2327f0a70ff335e0e728fcb3942927b63ec1da6db81"
+      "filehash": "c00b0eb148593b987eb0a18ef20449352c1fa420efc7dcf7e57c8afcbe57c8b9"
     },
     {
       "filename": "src/main.rs",
-      "filehash": "b6d7cba95f6a77d6a229f9fbd30c48b59e3155c05b5cdcfeb02606cd0408066e"
+      "filehash": "db79a049c3325184960df605fd379bda87d6eb0a0663bfa7670a6571dcc9feae"
     }
   ]
 }

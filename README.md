@@ -5,7 +5,7 @@
 [//]: # (auto_cargo_toml_to_md start)
 
 **Split 'Samsung 3 seconds motion jpg' into still photo and video (2025-02)**  
-***version: 1.0.14 date: 2025-02-08 author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/split_samsung_motion_jpg)***
+***version: 1.0.25 date: 2025-02-09 author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/split_samsung_motion_jpg)***
 
  ![work-in-progress](https://img.shields.io/badge/work_in_progress-yellow)
  ![maintained](https://img.shields.io/badge/maintained-green)
@@ -16,9 +16,9 @@
 [//]: # (auto_cargo_toml_to_md end)
 
 [//]: # (auto_lines_of_code start)
-[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-80-green.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
-[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-5-blue.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
-[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-17-purple.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
+[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-124-green.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
+[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-8-blue.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
+[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-19-purple.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
 [![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
 [![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)](https://github.com/bestia-dev/split_samsung_motion_jpg/)
 

@@ -693,8 +693,8 @@ pub(crate) mod docker_hub_mod {
             // check if the plain-text file from `podman login` exists and warn the user because it is a security vulnerability.
             let file_auth = "${XDG_RUNTIME_DIR}/containers/auth.json";
             // TODO: check for env variable also?
-            if let Some(xdg_runtime_dir) = std::env::var_os("XDG_RUNTIME_DIR"){
-                let xdg_runtime_dir=xdg_runtime_dir.to_string_lossy().to_string();
+            if let Some(xdg_runtime_dir) = std::env::var_os("XDG_RUNTIME_DIR") {
+                let xdg_runtime_dir = xdg_runtime_dir.to_string_lossy().to_string();
                 let file_auth_expanded = file_auth.replace("${XDG_RUNTIME_DIR}", &xdg_runtime_dir);
                 let file_auth_expanded = camino::Utf8Path::new(&file_auth_expanded);
                 if file_auth_expanded.exists() {
