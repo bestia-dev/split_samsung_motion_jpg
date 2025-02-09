@@ -1,13 +1,26 @@
 ./docs/split_samsung_motion_jpg/fn.main.html
 Document: "2" is not a file!
 
-line 1 column 2229 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
-line 1 column 2229 - Warning: discarding unexpected <rustdoc-search>
-line 1 column 2245 - Warning: discarding unexpected </rustdoc-search>
-line 1 column 2549 - Error: <rustdoc-toolbar> is not recognized! Did you mean to enable the custom-tags option?
-line 1 column 2549 - Warning: discarding unexpected <rustdoc-toolbar>
-line 1 column 2566 - Warning: discarding unexpected </rustdoc-toolbar>
-line 1 column 1829 - Warning: trimming empty <button>
+line 1 column 2183 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2183 - Warning: discarding unexpected <rustdoc-search>
+line 1 column 2199 - Warning: discarding unexpected </rustdoc-search>
+line 1 column 2503 - Error: <rustdoc-toolbar> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2503 - Warning: discarding unexpected <rustdoc-toolbar>
+line 1 column 2520 - Warning: discarding unexpected </rustdoc-toolbar>
+line 1 column 1783 - Warning: trimming empty <button>
+This document has errors that must be fixed before
+using HTML Tidy to generate a tidied up version.
+
+./docs/split_samsung_motion_jpg/fn.handle_panic.html
+Document: "2" is not a file!
+
+line 1 column 2172 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2172 - Warning: discarding unexpected <rustdoc-search>
+line 1 column 2188 - Warning: discarding unexpected </rustdoc-search>
+line 1 column 2500 - Error: <rustdoc-toolbar> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2500 - Warning: discarding unexpected <rustdoc-toolbar>
+line 1 column 2517 - Warning: discarding unexpected </rustdoc-toolbar>
+line 1 column 1772 - Warning: trimming empty <button>
 This document has errors that must be fixed before
 using HTML Tidy to generate a tidied up version.
 
@@ -31,6 +44,19 @@ line 1 column 2496 - Error: <rustdoc-toolbar> is not recognized! Did you mean to
 line 1 column 2496 - Warning: discarding unexpected <rustdoc-toolbar>
 line 1 column 2513 - Warning: discarding unexpected </rustdoc-toolbar>
 line 1 column 1769 - Warning: trimming empty <button>
+This document has errors that must be fixed before
+using HTML Tidy to generate a tidied up version.
+
+./docs/split_samsung_motion_jpg/fn.main_inner.html
+Document: "2" is not a file!
+
+line 1 column 2212 - Error: <rustdoc-search> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2212 - Warning: discarding unexpected <rustdoc-search>
+line 1 column 2228 - Warning: discarding unexpected </rustdoc-search>
+line 1 column 2538 - Error: <rustdoc-toolbar> is not recognized! Did you mean to enable the custom-tags option?
+line 1 column 2538 - Warning: discarding unexpected <rustdoc-toolbar>
+line 1 column 2555 - Warning: discarding unexpected </rustdoc-toolbar>
+line 1 column 1812 - Warning: trimming empty <button>
 This document has errors that must be fixed before
 using HTML Tidy to generate a tidied up version.
 
