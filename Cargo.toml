@@ -10,7 +10,7 @@ readme = "README.md"
 repository = "https://github.com/bestia-dev/split_samsung_motion_jpg"
 # https://crates.io/category_slugs
 categories = ["command-line-utilities"]
-keywords = ["work-in-progress", "maintained", "samsung", "motion", "jpg"]
+keywords = ["ready-for-use", "maintained", "samsung", "motion", "jpg"]
 publish = false
 
 [dependencies]
