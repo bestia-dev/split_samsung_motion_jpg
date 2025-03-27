@@ -5,7 +5,7 @@
 
 [//]: # (auto_cargo_toml_to_md start)
 
-**Split 'Samsung 3 seconds motion jpg' into still photo and video (2025-02)**  
+**Split -Samsung 3 seconds motion jpg- into still photo and video (2025-02)**  
 ***version: 1.0.30 date: 2025-02-09 author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/split_samsung_motion_jpg)***
 
  ![ready-for-use](https://img.shields.io/badge/ready_for_use-green)
